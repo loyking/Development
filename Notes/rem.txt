@@ -1,0 +1,23 @@
+响应式布局
+	1、在head中添加：<meta id="meta_viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+	2、<script type="text/javascript">
+        var designWidth = 950;//设计图宽度（最外层div的宽度）
+        if (window.innerWidth < designWidth) {
+            document.getElementsByTagName('html').item(0).style.fontSize = parseInt(window.innerWidth / designWidth * 100, 10) + 'px';
+        }
+    </script>
+	3、<script src="https://file.sxkid.com/js/lib/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(window).resize(function () {
+            var viewScale = $(window).width() < designWidth ? $(window).width() / designWidth : 1;
+            console.info(viewScale);
+            $('html').css('font-size', parseInt(viewScale * 100, 10) + 'px');
+        }).trigger('resize');
+    </script>
+	4、px换算rem（*2/100）
+
+div的内容高度不允许定死，由内容去挤压
+float:left 使用过后装放内容的div高度没有变化（display: flex;flex-direction: row; 浮动效果）
+使用绝对定位时，需要在父容器中设置相对定位，设置后使用绝对定位的元素起始位置从父元素的xy轴开始，没有使用相对于body
+pre标签：中间存放的内容全部都会被解析，并且原样输出（如果内容不是在标签起始位置，而是换了行或者用了tab按键，那么之前
+的所有内容为空白字符照样算占了一个位置）

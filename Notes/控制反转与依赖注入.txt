@@ -1,0 +1,22 @@
+控制反转（Inversion of Control）简称：Ioc，Ioc是一个控制容器
+依赖注入（Dependency Injection）简称：Di，di就是这个容器的运行机制
+
+使用NuGet，引入unity包
+Unity
+  1、构造器注：以构造函数参数形式传递依赖对象实例，以抽象接口作为参数类型，Ioc会自动解析具体所依赖的抽象并注册给具体的对象。
+ 
+  UnityContainer container = new UnityContainer();//创建容器
+  container.RegisterType<A,B>();//注册依赖对象,使用F12转到定义后查看发现，该方法为控制方法。并带了一个约束，B必须是A的子类，有约束的
+  C c = container.Resolve<D>();//返回调用者
+  RegisterType：可以看做是自来水厂决定用什么作为水源，可以是水库或是地下水，我只要“注册”开关一下就行了。
+  Resolve：可以看做是自来水厂要输送水的对象，可以是农村或是城市，我只要“控制”输出就行了。
+
+  首先第一步，创建一个Ioc的容器对象，第二步往容器内部存放数据（要返回的数据类型），第三步使用容器中的数据（的到数据）
+
+
+
+  2、属性注入：如果需要使用到被依赖的对象的某个属性进行操作，则被依赖对象在实例化后，Ioc会自动初始化该属性。
+       属性注入只需要在属性字段前面加[Dependency]，dependency只对字段、索引器有效
+       
+     使用属性注入后只需要再次RegisterType注册后在Resolve则与构造注入效果相同，但[Dependency]和RegisterType方式其实都会产生耦合度，
+     我们要添加一个属性或是修改一中注册都会去修改代码，则unity提供了配置文件配置注入，将这些注入写入配置文件中后，所有的注入只需要修改配置文件即可。

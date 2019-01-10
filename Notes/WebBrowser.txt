@@ -1,0 +1,25 @@
+WebBrowser：加载一个HTML页面的容器（只是一个存储HTML页面的容器，如果需要进行dom操作则需要转换为HtmlDocument）
+
+	实例化对象的准备操作：
+	1、在实例化WebBrowser对象时，会报无法进行实例化（线程因素）
+	2、需要自己开辟一个单独的线程进行操作	Thread thd = new Thread(new ParameterizedThreadStart(方法));  该方法必须要一个object参数的重载			执行该语句时会调用该委托
+	3、thd.SetApartmentState(ApartmentState.STA);  线程的状态
+	4、thd.IsBackground = true;	是否设置为后台线程
+	5、thd.Start();    //线程开始
+           	6、thd.Join();//主线程等待，临时线程开始处理
+
+	实例化完成：
+	1、Navigate(url)	需要加载的页面网址
+	2、 		while (myWB.ReadyState != WebBrowserReadyState.Complete)    //判断页面内容是否加载完成
+                	{
+                   		 Application.DoEvents();
+               		 }
+	3、HtmlDocument doc = web.Document;		获取到在WebBrowser对象的网页
+	4、加载完成后加载的页面会存储在实例化的对象中，该对象就相当于一个页面
+
+
+	注意点：如果要使用GetAttribute获取class属性的值，换成className（考虑到class在c#中为关键字，如果输入class是查不到的）
+
+
+Tostring("T")：转数字格式
+Request.UserAgent：获取客户端完整代理字符串

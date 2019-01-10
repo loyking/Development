@@ -1,0 +1,57 @@
+Git：分布式版本管理系统，分布式管理存储中央服务器，但是每个使用者本地也有一个服务器，当无法使用者处于
+无网状态时，可以先将新版本存储与自己本地（每个使用者本地都存储一个记录的服务器）
+SVN：集中式版本控制系统，代管管理存储于中央服务器，及每次操作都需要进行连接互联网，无网时无法操作，
+如果中央服务器崩溃，所有使用者将无法进行版本管理或获取最新版本
+
+工作区 =》 stage（暂存区） = 》 master（git服务器）
+在工作区内如果没将文件进行add则该文件不会被git进行管理，在文件进行add后，则表示该文件进入了stage中等待commit进行提交到bit管理系统
+
+
+
+cmd命令使用Git使用方法：
+1、git init：初始化Git仓库（在初始化后的文件夹中会存储在一个.git的文件夹（默认为隐藏状态，可以文件查看模块中勾选隐藏的项目））
+.git目录是用来进行管理版本库
+2、git add file：添加文件（使用add之后会将该文件放入暂存区，等待submit进行提交，写入git版本管理库中，没进行submit时则一直存在暂存区中）
+     git add .   ：添加文件根目录下的所有文件，需要进行提交的所有文件
+3、git commit -m '备注'：提交暂存区中的所有等待提交的文件（-m 'remark' 必写）
+4、git status：获取当前文件夹中的git status（检测出是否在暂存区中存在需要提交的文件或存在未进行提交的文件、修改后的文件）
+     git checkout -- file：当文件进行提交至暂存区时，需将文件移除暂存区，则使用该指令，取消文件提交状态
+     git reset head file：移除暂存区中的文件
+5、git diff[file]：获取当前文件状态，能检测出历史记录状态
+6、git log：获取操作所有的版本信息，在git中版本号不是有序或者int整型，在git中是进行SHA1进行计算后得到的编码号
+7、git reset --hard 版本号，使用该指令后git会根据该版本号进行自动还原对应的文件版本（版本号可以不写全写编号的前几位也可以正常执行）
+8、git reflog：操作日志执行记录
+9、git rm file：删除git中的文件信息（在删除之后需要进行一次提交，将文件状态写回master中）
+
+远程仓库：在git中允许用户使用其他电脑充当服务器角色（中央服务器），用来管理git master，或在本地使用
+GitHub：
+$ ssh-keygen -t rsa -C "youremail@example.com"	在右键 Git Bash Here命令操作中，在windows下的cmd环境无法允许此命令
+运行成功后，会在C盘中用户系统盘中存在id_rsa（私钥）,id_rsa.pub（公钥）两个文件，此文件存储的未SSH加密后的字符串
+生成两个文件后，进入GitHub=》setting =》 SSH and GPG keys =》 new SSH key （title：描述，key：id_rsa.pub中内容）
+使用场景：
+	1、将本地git存放至GitHub上，CMD： git remote add origin Repositories的路径地址（https://github.com/loyking/StudyGit.git）
+				              调用后cmd会自动调用GitHub的API打开Login界面输入账号密码
+					git push -u origin master  将文件全部进行push至GitHub
+	2、将GitHub导出至本地Git迁出（克隆），CMD：git clone （url）https://github.com/loyking/countryside/gitskills.git
+
+远程仓库指令：
+	git remote -v：查看当前文件git的远程仓库指向，一个文件只能指向一个远程库，否则提示：fatal: remote origin already exists
+		git remote：用来查看可推送的远程连接名称
+	git remote rm origin：删除当前指向的远程仓库
+	git remote add url：添加远程连接
+	git push 连接远程名称 master：将本地的master分支推送至对应的远程服务器
+	git clone url（在开源项目中，开发者不会让粉丝进行连接至服务器，只会开启一个复制的功能让粉丝进行下至本地进行查看）
+
+分支：用来分布管理版本（使用场景：当需要独自开发某功能模块时，但是在一天或多天内无法完全开发完成，但是提交至服务器可能导致其他模块
+无法使用，但如果不提交代码，可能导致源码丢失等等风险，则此时可以用分支完成该模块开发，将每次版本提交至创建的分支，当模板开发完成时，
+将此创建的分支与主分支（master）进行合并，然后删除自建的分支）
+
+分支使用语法：
+	git  checkout -b name（自创建分支名）：创建子分支
+	git branch：查看当前所有的分支，分支名前带有*号的，则表示目前操作的分支
+	git checkout name（分支名）：分支切换
+	git merge name（分支名）：合并分支（当前操作分支需要为master分支）
+	git branch -d name（分支名）：删除分支
+	git log --graph：查看当前分支操作记录
+
+

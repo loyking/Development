@@ -1,0 +1,146 @@
+if __name__ == '__main__':
+	执行代码块，当导入该文件时，程序会去找这个入口，然后从该入口中开始执行程序
+
+
+字符串在程序运行时都是unicode编码，JSON类型是一种过渡类型，适用于任何的语言，
+JSON就解决了当python程序中的数据传给java程序
+
+pickle序列化
+
+https://docs.python.org/3/library/json.html#json.dumps
+import json
+json.dumps(需要序利化的对象,default,object_hook)，如果直接使用dumps进行序利化则进行error提示，表示该对象不是一个可被序利化的对象
+default：按照该规则进行将对象序利化实体（定义规则）
+def ModelToJson(self)
+	return {'a':self.a,'b':selef.b}
+object_hook：按照该规则将str进行反序利化成对象
+def JsonToModel(t):
+	return Student(t['a'],t['b'])
+
+dic =  json.load(json) 将json数据转换为字典类型，允许使用（键值、下标）进行取值
+
+总结：将对象转换为string在python中称之为pickling，将string反转为mdoel称为unpickling
+
+
+线程和进程
+fork（unix/linux 提供，win中没有）：程序默认将当前程序称为父进程，并复制一份子进程，
+在父进程中会fork出所有的子进程的id，而子进程的存储结果永远为0，但是可以通过getppid用来获取父级进程ID
+
+import os
+
+os.path.exists(url)：检测文件是否存在
+
+os.getppid()获取当前程序中父级的进程id
+os.getpid()获取当前进程id
+
+线程阻塞通常是指一个线程在执行过程中暂停，以等待某个条件的触发。
+
+由于win中没有fork，就需要导入包来进行操作多进程模块（multiprocessing（跨平台））
+multiprocessing模块提供了process来创建进程对象
+p = Process(target = 执行的方法 , args = (元组类型(以逗号结尾)))
+p.start()	执行进程
+p.close(）  关闭该进程状态
+p.join()   等待该进程结束后才往下执行，主线程阻塞，等待子进程的退出，join方法必须在close或terminate之后使用
+
+join需要在close之后使用：如果没有进行手动关闭进程，程序将会默认以为进程还需要进行再次使用，而join的功能是执行子线程，
+当主线程操作并未完成时，子线程还在等待之中
+
+
+
+def test(a,b,c):
+     pass
+
+p = Process(target = 方法名, args = (元组参数))
+p = Process(target = test , args = ('a','b','c',))
+
+如果要启用大量的子进程，可以用进程池的方式批量创建子进程
+from multiprocessing import Pool
+p = Pool(计算机的cpu核数)
+
+子进程的外部调用，并非调用自己本身的一个进程
+import subprocess
+subprocess.call(['指令','参数值'])
+例如：subprocess.call(['nslookup','www.python.org'])  查询检测域名
+
+thread（线程）
+在python中底层提供了两个操作线程的_thread（底层），threading（高层）
+threading.Thread(target=方法，name=线程名)
+threading.Thread(target=loop,name='loopthread')
+
+在进程中存在多个线程，并且同线程中，资源是所有线程共享的，当多个线程同时操作同一个资源时会造成资源争夺，导致数据有误
+所以在操作时在线程中用锁机制来保证数据原子性
+在python提供：
+lock = threading.Lock() 创建锁实例
+lock.acquire()	获取锁（并执行），启用后该块一次只能进入一个线程
+lock.release()	执行完操作后释放该锁，让其他线程进行操作	
+
+任何进程都会开启一个默认线程称之为主线程
+MainThread：主线程名称
+
+start()：线程开启
+join()：等待线程结束非阻塞
+
+Queue.Queue()
+put：向队列中添加元素数据
+
+from datetime import datetime
+datetime.today()	获取当前日期
+
+
+-------------------------------python 爬网页--------------------
+博客：https://www.cnblogs.com/WuXiaolong/p/8570065.html
+           https://www.jianshu.com/p/ba02079ecd2f
+
+
+如果无法使用requests_html包，则需要先使用python包安装指令安装该包
+pip install request-html
+
+from requests_html import HTMLSession，导入包后使用HTMLSession对象进行页面捕获
+session = HTMLSession() 实例化该对象
+r = session.get('url')   捕获地址，获取完成后会返回一个实例化后的页面对象
+r.html.text	获取抓捕后的页面内容信息（不带标签）
+
+
+爬虫
+由（调度器，URL管理器，网页下载器，网页解析器，应用程序）
+url管理器存储着待爬取和已爬取完成的url地址，
+网页下载器当调度器调用下载器时，会从url管理器中取得一个url地址，当下载完成后会返回一个下载后的结果给调度器
+网页解析器当下载完成后调度器就可以开始调用解析器来解析网页得到解析后的结果
+应用程序当调度器将解析结果传入后，即可开始程序操作
+
+
+-----------------------python request请求--------------------------
+import request
+r = request.get(url(请求地址))
+r.status_code    请求返回状态码，成功200
+r.text	          响应结果体，json格式，如果需要操作该结果体，需要使用json.loads()，进行转换为json字典格式
+
+
+
+---------------------------web开发--------------------------
+WSGI接口用来响应HTTP请求返回，使用wsgi返回的html页面，在response headers
+start_response('200 ok',[('Content-Type','text/html')])  响应状态码，请求格式，只能存在一个请求响应
+使用WSGI打开的网页会在页面加载请求的response headers中的server参数显示响应类型：WSGIServer/0.2 CPython/3.7.1
+return： 响应体（可不带）+html代码结构
+
+使用第三方框架：flask（用来区分用户的访问方式与访问url）
+pip install flask
+改框架的作用是用来配置路由，当前端用户的正确访问时，flas会对应的将请求分配到对应的方法
+相当于mvc中 Controller
+而web页面就相当于web层
+实体在类内部中进行定义  model
+
+flak配置：
+import flask
+app = Flask(__name__)
+app.run()在程序入口函数内启用，否则flask无法使用
+@app.route('url','methods(限定请求方式)')
+以@开头（装饰器）的都相当于c#中过滤器
+
+注意：如果使用了@app进行修饰的方法，则表示该方法只能返回dict，list，tupel（元组），string，int，无法进行方法具体实体
+可以先将实体模型进行转换为dict，然后使用jsonify(model)，进行序利化，在web前端页面则表示该方法为一个json串
+
+
+共享布局视图：
+{% extends 'page.html' %}			引入html页面，使用某个页面进行作为模板页
+{% block customName %} html code {% endblock %}	customName：自定义名称模块
