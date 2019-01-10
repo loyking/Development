@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <script type="text/javascript" src="https://file.sxkid.com/js/lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var arr = [];
+            var i = 1;
+            arr[0] = "imgUrl,aUrl,aContext,p";
+            $(".widget-food-list ul li").each(function (index, element) {
+                arr[i] = $(element).find('div:first a img').attr('src') + ',' + $(element).find('div:last a').attr('href') + ',' +
+                    $(element).find('div:last a').text() + ',' + $(element).find('div:last p').text();
+                i++;
+            })
+            console.log($('.widget-food-list').find('h3:first').text())
+            for (var j = 0; j < arr.length; j++) {
+                console.log(arr[j]);
+            }
+        })
+    </script>
+</body>
+</html>

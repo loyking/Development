@@ -1,0 +1,13 @@
+
+
+写入时间：2018/9/28 10:19:28
+备注：
+错误地址：微信消息
+错误描述：<xml><ToUserName><![CDATA[gh_7c2118c061d4]]></ToUserName>
+<FromUserName><![CDATA[oBE1V0nhAfHjUKh9ryDzeWrwP2Ao]]></FromUserName>
+<CreateTime>1538101168</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz_jpg/o6S8Y27FdHH1NmI2EibQOVc5XJzVJqIXFib47QAs7taU3ZdfImb2tiaYttPJX1HKwYZywPWIcsqJQz8TxRIoam8jA/0]]></PicUrl>
+<MsgId>6606094214925422397</MsgId>
+<MediaId><![CDATA[-exkBhc83Kup0Lm8x4xkQxt5ldJRdXPQZIdxoKRcKpFlRAUL2lKnp4Lb-sgEOtFv]]></MediaId>
+</xml>

@@ -1,0 +1,63 @@
+<view class='body'>
+  <view class='queryContainer'>
+    <view class="title">查询结果</view>
+    <view class='ResultBox'>
+      <view>
+        <view class='ResultTitle'>科目名称</view>
+        <view class='ResultTitle'>科目成绩</view>
+      </view>
+      <view>
+        <view>语文</view>
+        <view>{{ChineseScore}}</view>
+      </view>
+      <view>
+        <view>数学</view>
+        <view>{{MathematicsScore}}</view>
+      </view>
+       <view>
+        <view>英语</view>
+        <view>{{EnglishScore}}</view>
+      </view>
+       <view>
+        <view>历史</view>
+        <view>{{HistoryScore}}</view>
+      </view>
+       <view>
+        <view>地理</view>
+        <view>{{GeographyScore}}</view>
+      </view>
+      <view>
+        <view>生物</view>
+        <view>{{BiologyScore}}</view>
+      </view>
+      <view>
+        <view>化学</view>
+        <view>{{ChemistryScore}}</view>
+      </view>
+      <view>
+        <view>物理</view>
+        <view>{{PhysicsScore}}</view>
+      </view>
+      <view>
+        <view>政治</view>
+        <view>{{PoliticsScore}}</view>
+      </view>
+       <view>
+        <view>总分</view>
+        <view>{{SumScore}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <button style='border:1px solid rgb(23,144,251); color:rgb(23,144,251);background-color: #EFEFEF;' bindtap='ContinueQuery'>继续查询</button>
+      <view></view>
+    <button style='background-color: rgb(23,144,251); color: white;' bindtap='scoreQuery'>录取结果查询</button>
+  </view>
+
+  <view class='download'>
+    <text decode="{{true}}">广州民办高中哪家好？点击查看民办高中排名\n咨询国际高中，下载上学帮进行一对一咨询</text>
+
+    <button class='downloadBtn'>下载</button>
+  </view>
+</view>

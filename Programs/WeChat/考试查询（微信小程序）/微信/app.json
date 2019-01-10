@@ -1,0 +1,21 @@
+{
+  "pages":[
+   
+    "pages/index/index",
+    "pages/GKQuery/GKQuery",
+    "pages/ZKQuery/ZKQuery",
+    "pages/ServiceNoOpen/ServiceNoOpen",
+    "pages/NoQuery/NoQuery",
+    "pages/ZKAdmissionsResults/ZKAdmissionsResults",
+    "pages/ZKScoreResult/ZKScoreResult",
+    "pages/GKAdmissionsResult/GKAdmissionsResult",
+    "pages/GKScoreResult/GKScoreResult",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "广东考试查询",
+    "navigationBarTextStyle": "white"
+  }
+}

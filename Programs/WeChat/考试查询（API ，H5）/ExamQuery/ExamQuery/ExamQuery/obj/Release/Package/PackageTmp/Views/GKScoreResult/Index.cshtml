@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "高考成绩";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+@section link{
+    <style type="text/css">
+        .container {
+            width: 6.52rem;
+            height: 8.18rem;
+            background-color: white;
+            border-radius: 0.1rem;
+            margin: 0px auto;
+            position: relative;
+            top: 0.44rem;
+        }
+
+        .query {
+            font-size: 0.3rem;
+            width: 90%;
+            margin: 0px auto;
+            margin-top: 0.80rem;
+            color: rgb(57,60,60);
+        }
+
+            .query td {
+                text-align: center;
+                padding: 0.2rem 0rem;
+            }
+
+        .TermsOfService {
+            font-size: 0.30rem;
+            padding-top: 1.20rem;
+        }
+
+        .btnBox {
+            margin: 0px auto;
+            text-align: center;
+            padding-top: 0.80rem;
+        }
+
+            .btnBox input {
+                width: 3.22rem;
+                height: 1.30rem;
+                border: 1px solid #1790FB;
+                color: #1790FB;
+                font-size: 0.36rem;
+                border-radius: 0.10rem;
+                margin-top: 1.83rem
+            }
+
+        .title {
+            font-size: 0.38rem;
+            width: 6.52rem;
+            height: 0.98rem;
+            background-color: rgb(23,144,251);
+            text-align: center;
+            border-top-left-radius: 0.1rem;
+            border-top-right-radius: 0.1rem;
+            color: white;
+            line-height: 0.98rem;
+        }
+
+        .head {
+            color: black;
+            font-weight: bold;
+            font-size: 0.35rem;
+        }
+    </style>
+}
+
+
+<div class="container">
+    <div class="title">查询结果</div>
+    <table class="query" style="border-color:rgb(214,214,214)" border="1" cellpadding="0" cellspacing="0">
+        <tr class="head">
+            <td>科目名称</td>
+            <td>科目成绩</td>
+        </tr>
+        <tr>
+            <td>语文</td>
+            <td>@ViewBag.Rez.ChineseScore</td>
+        </tr>
+        <tr>
+            <td>@ViewBag.Rez.Type<span>数学</span></ td >
+            <td>@ViewBag.Rez.MathematicsScore</td>
+        </tr>
+        <tr>
+            <td>外语</td>
+            <td>@ViewBag.Rez.EnglishScore </td>
+        </tr>
+        <tr>
+            <td>@ViewBag.Rez.Type<span>综合</span></td>
+            <td>@ViewBag.Rez.ComprehensiveScore</td>
+        </tr>
+        <tr>
+            <td>总分</td>
+            <td>@ViewBag.Rez.SumScore </td>
+        </tr>
+    </table>
+</div>
+
+<div class="btnBox">
+    <span><input id="Continue" style="background-color: #1790FB ; color: white;" type="button" value="继续查询" /></span>
+    <span><input id="NotOpen" style="background-color: #EFEFEF;" type="button" value="录取结果查询" /></span>
+</div>
+
+
+@section script{
+    <script type="text/javascript">
+        $(function(){
+            $("#Continue").click(function(){
+                location.href = "/Home/GaoKaoAction";
+            })
+
+            $("#NotOpen").click(function () {
+
+                location.href = "/ErrorOrEmpty";
+            })
+        })
+    </script>
+}

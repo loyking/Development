@@ -1,0 +1,129 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta id="meta_viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+    <script type="text/javascript">
+        var designWidth = 750;//设计图宽度
+        if (window.innerWidth < designWidth) {
+            document.getElementsByTagName('html').item(0).style.fontSize = parseInt(window.innerWidth / designWidth * 100, 10) + 'px';
+        }
+    </script>
+    <style>
+        body { margin: 0px; background-color: #EFEFEF; }
+        .body { width: 7.5rem; background-color: #EFEFEF; position: relative; }
+        @@media screen and (max-width: 750px) {
+            .body { position: absolute; width: 100%; height: 100%; }
+        }
+    </style>
+    @RenderSection("link", false)
+</head>
+<body>
+    <div class="body">
+        @RenderBody()
+    </div>
+    <script type="text/javascript" src="~/Script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript">
+        $(window).resize(function () {
+            var viewScale = $(window).width() < designWidth ? $(window).width() / designWidth : 1;
+            console.info(viewScale);
+            $('html').css('font-size', parseInt(viewScale * 100, 10) + 'px');
+        }).trigger('resize');
+
+
+        var weixin_api_list = ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'showMenuItems', 'hideMenuItems', 'hideOptionMenu'];
+
+        var share_title_Timeline;
+        var share_title = '@ViewBag.share_title' || '上学帮，学龄儿童父母必备择校神器';
+        var share_link = '@ViewBag.share_link' || location.href;
+        var share_imgUrl = '@ViewBag.share_imgUrl' || 'https://file.sxkid.com/images/logo.png';
+        var share_desc = '@ViewBag.share_desc' || '深度了解附近好学校\r\n查看家长点评与口碑\r\n测测哪个课程适合你';
+        var allow_share = true;
+        var allow_copyLink = true;
+
+        if (typeof wx != 'undefined') {
+            wx.ready(function () {
+                wx.showMenuItems({
+                    menuList: ["menuItem:profile", "menuItem:addContact"] // 要显示的菜单项，所有menu项见附录3
+                });
+                if (!allow_copyLink) {
+                    wx.hideMenuItems({
+                        menuList: ["menuItem:copyUrl", "menuItem:originPage", "menuItem:openWithQQBrowser", "menuItem:openWithSafari", "menuItem:share:email"] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+                    });
+                }
+                if (!allow_share) {
+                    wx.hideOptionMenu();
+                }
+                wx.onMenuShareTimeline({
+                    title: share_title_Timeline || share_title, // 分享标题
+                    link: share_link, // 分享链接
+                    imgUrl: share_imgUrl, // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+                wx.onMenuShareAppMessage({
+                    title: share_title, // 分享标题
+                    desc: share_desc, // 分享描述
+                    link: share_link, // 分享链接
+                    imgUrl: share_imgUrl, // 分享图标
+                    //type: '', // 分享类型,music、video或link，不填默认为link
+                    //dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+                wx.onMenuShareQQ({
+                    title: share_title, // 分享标题
+                    desc: share_desc, // 分享描述
+                    link: share_link, // 分享链接
+                    imgUrl: share_imgUrl, // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+                wx.onMenuShareWeibo({
+                    title: share_title, // 分享标题
+                    desc: share_desc, // 分享描述
+                    link: share_link, // 分享链接
+                    imgUrl: share_imgUrl, // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+            })
+        }
+
+        $(document).ready(function () {
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: '@ViewBag.weixin_AppID', // 必填，公众号的唯一标识
+                timestamp: '@ViewBag.timestamp', // 必填，生成签名的时间戳
+                nonceStr: '@ViewBag.nonceStr', // 必填，生成签名的随机串
+                signature: '@ViewBag.signature',// 必填，签名，见附录1
+                jsApiList: weixin_api_list // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+        });
+    </script>
+    @RenderSection("script", false)
+</body>
+</html>

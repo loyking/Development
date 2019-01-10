@@ -1,0 +1,13 @@
+Models：实体层
+	GkScoreResult：高考成绩结果
+	ZkScoreResult：中考成绩结果
+	Parameter：查询成绩参数
+	其余文件夹存放省份接口地址（命名：省份拼音）,一个类存放一个城市接口地址
+
+Interface：两个基类接口
+	IGetGaoKaoScore（查询高考成绩）	返回：GkScoreResult
+	IGetZhongKaoScore（查询中考成绩）	返回：ZkScoreResult
+
+QueryScore：查询成绩
+	需要查询的省份
+		城市：实现两个接口

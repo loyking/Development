@@ -1,0 +1,91 @@
+﻿@using WxDemo.Models;
+@{
+    ViewBag.Title = "首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section link
+{
+    <style>
+        table {
+            width: 50%;
+            text-align: center;
+        }
+
+        .userInfo {
+            text-align: center;
+        }
+
+        .headImg {
+            width: 50px;
+        }
+    </style>
+}
+
+@if (int.Parse(ViewBag.User.subscribe) == 1)
+{
+    if (ViewBag.userInfos != null)
+    {
+        <table id="VoteUserInfo" class="table table-bordered table-condensed table-striped table-hover">
+            @foreach (UserInfo item in ViewBag.userInfos)
+            {
+                <tr>
+                    <td>
+                        <div class="userInfo">
+                            <span><img class="headImg" src="@item.Img" /></span><br />
+                            <span>昵称： @item.UserName</span><br />
+                            <span>总票数： @item.UserVote.Count()</span><br />
+                            <span><input type="button" class="btn btn-primary vote" data-id="@item.Id" value="投票" /></span>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+
+
+    }
+}
+else
+{
+    <div>
+        <img src="http://www.loyking.cn/img/subscribe.jpg" />
+    </div>
+}
+
+
+@section script
+{
+    <script type="text/javascript">
+        $(function () {
+
+            $(".vote").on("click", function () {
+                var userId = $(this).attr("data-id")
+                $.ajax({
+                    url: "/Home/Vote",
+                    type: "POST",
+                    data: { Id: userId },
+                    success: function (data) {
+                        alert(data.msg)
+                        if (data.code == 1) {
+                            $("#VoteUserInfo").empty();
+                            var html = "<tr><td>用户信息</td></tr>";
+                            for (var i = 0; i < data.data.length; i++) {
+                                html += "<tr>";
+                                html += "<td>";
+                                html += '<div class="userInfo">';
+                                html += '<span><img class="headImg" src="' + data.data[i].Img + '" /></span><br />';
+                                html += '<span>昵称： ' + data.data[i].UserName + '</span><br />';
+                                html += '<span>总票数： ' + data.data[i].UserVote.length + '</span><br />';
+                                html += '<span><input type="button" class="btn btn-primary vote" data-id="' + data.data[i].Id + '" value="投票" /></span>';
+                                html += '</div>';
+                                html += "</td>";
+                                html += "</tr>";
+                            }
+                            $("#VoteUserInfo").append(html);
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+}
+

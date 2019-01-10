@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "中考成绩";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+@section link{
+    <style type="text/css">
+        .container {
+            width: 6.52rem;
+            height: 9.5rem;
+            background-color: white;
+            border-radius: 0.1rem;
+            margin: 0px auto;
+            position: relative;
+            top: 0.44rem;
+        }
+
+        .query {
+            font-size: 0.2rem;
+            width: 90%;
+            margin: 0px auto;
+            margin-top: 0.80rem;
+            color: rgb(57,60,60);
+        }
+
+            .query td {
+                text-align: center;
+                padding: 0.2rem 0rem;
+            }
+
+        .TermsOfService {
+            font-size: 0.30rem;
+            padding-top: 1.20rem;
+        }
+
+        .btnBox {
+            margin: 0px auto;
+            text-align: center;
+            position: absolute;
+            bottom: 0.3rem;
+            left: 0px;
+            right: 0px;
+        }
+
+            .btnBox input {
+                width: 3.22rem;
+                height: 1.30rem;
+                border: 1px solid #1790FB;
+                color: #1790FB;
+                font-size: 0.36rem;
+                border-radius: 0.10rem;
+            }
+
+        .title {
+            font-size: 0.38rem;
+            width: 6.52rem;
+            height: 0.98rem;
+            background-color: rgb(23,144,251);
+            text-align: center;
+            border-top-left-radius: 0.1rem;
+            border-top-right-radius: 0.1rem;
+            color: white;
+            line-height: 0.98rem;
+        }
+
+        .head {
+            color: black;
+            font-weight:bold;
+            font-size: 0.25rem;
+        }
+    </style>
+}
+
+
+<div class="container">
+    <div class="title">查询结果</div>
+    <table class="query" style="border-color:rgb(214,214,214)" border="1" cellpadding="0" cellspacing="0">
+        <tr class="head">
+            <td>录取学校名称</td>
+            <td>录取类别</td>
+            <td>录取批次</td>
+        </tr>
+        <tr>
+            <td>@ViewBag.Rez.SchoolName</td>
+            <td>@ViewBag.Rez.Category</td>
+            <td>@ViewBag.Rez.Batch</td>
+        </tr>
+    </table>
+    <div style="color:red; font-size:0.19rem; width:90%; margin:0px auto; margin-top:0.2rem;">提醒：请考生一定要查看录取学校的《新生注册报到须知》，按时到学校注册报到，不按时注册报到将被注销录取资格。后期补录的请直接联系学校确定注册报到事宜。</div>
+</div>
+
+<div class="btnBox">
+    <span><a href="/ZkAdmissions"><input id="Continue" style="background-color: #1790FB ; color: white;" type="button" value="继续查询" /></a></span>
+    <span><a href="/Home/"><input id="NotOpen" style="background-color: #EFEFEF;" type="button" value="返回首页" /></a></span>
+</div>
+
+
+@section script{
+    <script type="text/javascript">
+        $(function(){
+
+        })
+    </script>
+}

@@ -1,0 +1,222 @@
+﻿@using ExamQuery.Models
+@{
+    ViewBag.Title = "高考查询界面";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section link{
+    <style type="text/css">
+        .container {
+            width: 6.52rem;
+            height: 8.12rem;
+            background-color: white;
+            border-radius: 0.1rem;
+            margin: 0px auto;
+            position: relative;
+            top: 0.44rem;
+        }
+
+        .query {
+            font-size: 0.3rem;
+            width: 100%;
+            margin-left: 0.36rem;
+        }
+
+            .query td {
+                padding-top: 0.8rem;
+            }
+
+        .TermsOfService {
+            font-size: 0.30rem;
+            padding-top: 1.20rem;
+        }
+
+        .btnBox {
+            margin: 0px auto;
+            text-align: center;
+            padding-top: 0.80rem;
+        }
+
+            .btnBox input {
+                width: 3.22rem;
+                height: 1.30rem;
+                border: 1px solid #1790FB;
+                color: #1790FB;
+                font-size: 0.36rem;
+                border-radius: 0.10rem;
+                margin-top:1.50rem
+            }
+
+        .txt {
+            width: 4.60rem;
+            height: 0.76rem;
+            border-radius: 0.08rem;
+            border: 0.02rem solid rgba(151,151,151,0.29);
+            font-size: 0.3rem;
+            background-color: white;
+        }
+
+        .overfloat {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(1,1,1,.5)
+        }
+
+        .guize_html {
+            margin:0px auto;
+            width: 6.4rem;
+            height: 10.82rem;
+            border-radius: 0.04rem;
+            background-color: #fff;
+            color: #000;
+            font-size: 0.30rem
+        }
+
+        .Agreement {
+            margin-left: 0.38rem;
+            font-family: PingFangSC-Regular;
+        }
+
+        .Iagree {
+            width: 100%;
+            height: 1.12rem;
+            border-radius: 0px 0px 4px 4px;
+            text-align: center;
+            background-color: #1790FB;
+            line-height: 1.12rem;
+            font-size: 0.34rem;
+            font-weight:bold;
+            color: white;
+            position:relative;
+            bottom:0.40rem;
+        }
+
+            .Iagree:hover {
+                cursor: pointer;
+            }
+
+        @@media screen and (max-width: 750px) {
+            .footer {
+                position: absolute;
+                bottom: 0px;
+            }
+        }
+    </style>
+}
+
+<div class="container">
+    <table class="query">
+        <tr>
+            <td>省份</td>
+            <td>
+                <select id="Province" class="txt">
+                    @foreach (Province Provinceinfo in ViewBag.GaoKaoProvince)
+                    {
+                    <option value="@Provinceinfo.ProvinceKey" data-RequestUrl="@Provinceinfo.RequestUrl">@Provinceinfo.ProvinceName</option> 
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="color:#1790FB ;">注意：录取结果以录取院校下发的录<br />取知书为准.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <div class="TermsOfService">
+                    <input id="TermsOfServiceChe" type="checkbox" />
+                    <label>我已阅读并接受<font style="color:#1790FB ;" id="TermsOfService">"服务条款"</font></label>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="btnBox">
+    <span><input id="cjQuery" style="background-color: #1790FB ; color: white;" type="button" value="成绩查询" /></span>
+    <span><input id="AdmissionsRez" style="background-color: #EFEFEF;" type="button" value="录取结果查询" /></span>
+</div>
+
+<div class="overfloat">
+    <div class="guize_html">
+        <p style="text-align: center; font-size:0.40rem; padding-top:0.38rem; font-weight:bold;">授权委托</p>
+        <pre class="Agreement">
+鉴于网络的特性，本网站将无可避免地与您
+产生直接或间接的互动关系，故特此说明本
+网站对用户个人信息所采取的收集、使用和
+保护政策，请您务必仔细阅读：
+
+（1）本次成绩数据内容并非由上学帮提
+供，上学帮不承担由于内容的不一致性所引
+起的一切争议和法律责任，查询结果最终以
+广东省教育考试院数据为准。
+（2）本网站将对您所提供的资料进行严格
+的管理及保护，本网站将使用相应的技术，
+防止您的个人资料丢失、被盗用或遭篡改。
+（3）当政府机关依照法定程序要求本网站
+披露个人资料时，本网站将根据执法单位之
+要求或为公共安全之目的提供个人资料。在
+此情况下之任何披露，本网站均得免责。
+（4）本网站将建立和维持一合理的程序，
+以保护未成年人个人资料的保密性及安全
+性。本网站郑重声明：未成年人参加网上活
+动应事先得到家长或其法定监护人的可经查
+证的同意。
+
+<a style="font-weight:bold;">您必须同意以上协议才能使用上学帮的服务</a>
+				</pre>
+
+        <div class="Iagree" id="Iagree">
+            我同意
+        </div>
+    </div>
+</div>
+
+@section script{
+    <script type="text/javascript" src="~/Script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Home/GetCopywritingInfo?query=false",
+                success: function (data) {
+                    $("#footerDiv").css("background", "url(" + data.ImgUrl + ")")
+                    $("#Text").text(data.Banner)
+                    if (data.BtnText != "") {
+                        $("#btnText").css("display", "block").text(data.BtnText)
+                    }
+                }
+            })
+
+            $("#TermsOfService").click(function () {
+                $(".overfloat").show();
+            })
+
+
+            $("#Iagree").click(function () {
+                $(".overfloat").hide();
+                $("#TermsOfServiceChe").prop("checked", true)
+            })
+
+            $("#cjQuery").click(function () {
+                if (!$("#TermsOfServiceChe").is(':checked')) {
+                    $(".overfloat").show();
+                }
+                else
+                {
+                    location.href = $("#Province option:selected").attr("data-RequestUrl")
+                }
+            })
+
+            $("#AdmissionsRez").click(function () {
+                location.href = "/ErrorOrEmpty";
+            })
+        })
+    </script>
+}

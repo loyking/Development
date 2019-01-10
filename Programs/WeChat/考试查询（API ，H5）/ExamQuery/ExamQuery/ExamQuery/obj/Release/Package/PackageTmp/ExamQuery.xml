@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExamInfo>
+  <Province ProvinceValue="北京" ProvinceKey="110000" PcRequestUrl="http://www.bjeea.cn/html/gkgz/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="天津" ProvinceKey="120000" PcRequestUrl="http://www.zhaokao.net/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="河北" ProvinceKey="130000" PcRequestUrl="http://www.hebeea.edu.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="山西" ProvinceKey="140000" PcRequestUrl="http://www.sxkszx.cn/index.html" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="内蒙古" ProvinceKey="150000" PcRequestUrl="http://www.nm.zsks.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="辽宁" ProvinceKey="210000" PcRequestUrl="http://www.lnzsks.com/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="吉林" ProvinceKey="220000" PcRequestUrl="http://www.jleea.edu.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="黑龙江" ProvinceKey="230000" PcRequestUrl="http://www.lzk.hl.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="上海" ProvinceKey="310000" PcRequestUrl="https://www.shmeea.edu.cn/page/index.html" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="江苏" ProvinceKey="320000" PcRequestUrl="http://www.jseea.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="浙江" ProvinceKey="330000" PcRequestUrl="http://www.zjzs.net/moban/index/index.html" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="安徽" ProvinceKey="340000" PcRequestUrl="http://www.ahzsks.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="福建" ProvinceKey="350000" PcRequestUrl="http://www.eeafj.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="江西" ProvinceKey="360000" PcRequestUrl="http://www.jxedu.gov.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="山东" ProvinceKey="370000" PcRequestUrl="http://www.sdzs.gov.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="河南" ProvinceKey="410000" PcRequestUrl="http://www.haedu.gov.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="湖北" ProvinceKey="420000" PcRequestUrl="http://www.hbea.edu.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="湖南" ProvinceKey="430000" PcRequestUrl="http://www.hneao.edu.cn/" XcxRequestUrl="">
+    <City CityValue="衡阳" CityKey="430400"></City>
+  </Province>
+  <Province ProvinceValue="广东" ProvinceKey="440000" PcRequestUrl="http://www.eeagd.edu.cn/portal/?" XcxRequestUrl="">
+    <City CityValue="广州" CityKey="440100"></City>
+    <City CityValue="深圳" CityKey="440300"></City>
+  </Province>
+  <Province ProvinceValue="广西" ProvinceKey="450000" PcRequestUrl="http://www.gxeea.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="海南" ProvinceKey="460000" PcRequestUrl="http://ea.hainan.gov.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="重庆" ProvinceKey="500000" PcRequestUrl="http://www.cqksy.cn/site/index.html" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="四川" ProvinceKey="510000" PcRequestUrl="http://www.scedu.net/" XcxRequestUrl="../SiChuan/SiChuan">
+    <City CityValue="成都" CityKey="510100"></City>
+  </Province>
+  <Province ProvinceValue="贵州" ProvinceKey="520000" PcRequestUrl="http://www.gzszk.com/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="云南" ProvinceKey="530000" PcRequestUrl="http://www.ynzs.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="西藏" ProvinceKey="540000" PcRequestUrl="http://www.xzzsks.com.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="陕西" ProvinceKey="610000" PcRequestUrl="http://www.sneac.com/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="甘肃" ProvinceKey="620000" PcRequestUrl="http://gaokao.ganseea.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="青海" ProvinceKey="630000" PcRequestUrl="http://www.qhjyks.com/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="宁夏" ProvinceKey="640000" PcRequestUrl="https://www.nxks.nx.edu.cn/" XcxRequestUrl=""></Province>
+  <Province ProvinceValue="新疆" ProvinceKey="650000" PcRequestUrl="http://www.xjedu.gov.cn/" XcxRequestUrl=""></Province>
+</ExamInfo>

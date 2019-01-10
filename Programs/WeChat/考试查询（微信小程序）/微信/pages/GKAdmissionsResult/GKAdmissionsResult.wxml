@@ -1,0 +1,23 @@
+<view class='body'>
+  <view class='queryContainer'>
+    <view class="title">查询结果</view>
+    <view class='ResultBox'>
+      <view>
+        <view class='ResultTitle'>批次</view>
+        <view class='ResultTitle'>类别</view>
+        <view class='ResultTitle'>院校名称</view>
+      </view>
+      <view>
+        <view>{{Batch}}</view>
+        <view>{{Category}}</view>
+        <view>{{SchoolName}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <button style='border:1px solid rgb(23,144,251); color:rgb(23,144,251);background-color: #EFEFEF;' bindtap='ContinueQuery'>继续查询</button>
+      <view></view>
+    <button style='background-color: rgb(23,144,251); color: white;' bindtap='Index'>返回首页</button>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "四川高考成绩查询";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+@section link{
+    <style>
+        .tab {font-size:15px;margin:0px auto;}
+        .txt{width:70px;}
+        .container{width:7rem;background-color:white;margin:0px auto; position:relative; top:20px; border-radius:5px;}
+    </style>
+}
+
+    <div class="container">
+        <table class="tab" border="1">
+            <tr>
+                <td>考生号</td>
+                <td colspan="2"><input style="width:100%" type="text" placeholder="请输入考生号" /></td>
+            </tr>
+            <tr>
+                <td>准考证号</td>
+                <td colspan="2"><input style="width:100%" type="text" placeholder="请输入准考证号" /></td>
+            </tr>
+            <tr>
+                <td>身份证号</td>
+                <td colspan="2"><input style="width:100%" type="text" placeholder="请输入身份证号" /></td>
+            </tr>
+            <tr>
+                <td>验证码</td>
+                <td><input type="text" placeholder="请输入验证码" /></td>
+                <td><img src="http://api.sceea.cn/Handler/ValidateImageHandler.ashx?t=0.84881874270357" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">注意：录取结果以录取院校下发的录取通知书为准.</td>
+            </tr>
+        </table>
+    </div>

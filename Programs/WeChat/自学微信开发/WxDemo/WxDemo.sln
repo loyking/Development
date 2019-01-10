@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxDemo", "WxDemo\WxDemo.csproj", "{DCF08DED-6A59-4BD8-A68C-587E01CD9262}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCF08DED-6A59-4BD8-A68C-587E01CD9262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF08DED-6A59-4BD8-A68C-587E01CD9262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF08DED-6A59-4BD8-A68C-587E01CD9262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF08DED-6A59-4BD8-A68C-587E01CD9262}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB6E2AA2-4EB2-487E-BEE9-876AF13B96D7}
+	EndGlobalSection
+EndGlobal

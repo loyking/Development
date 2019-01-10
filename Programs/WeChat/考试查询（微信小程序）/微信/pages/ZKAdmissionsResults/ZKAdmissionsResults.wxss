@@ -1,0 +1,12 @@
+page{background-color: #EFEFEF;font-size: 30rpx;}
+.body{position: relative;width: 100%;}
+.queryContainer{width: 694rpx;height: 822rpx; border-radius:10rpx; margin:  0px auto; background-color:white; position: relative; top: 38rpx;overflow-y: auto;font-size: 30rpx;font-family: PingFangSC-Semibold;}
+.queryContainer text{display: block;margin: 0px auto;margin-left: 40rpx;}
+
+.footer{width: 694rpx;margin: 0px auto;display: flex;flex-direction: row;margin-top: 80rpx;font-size: 36rpx; letter-spacing: -0.8rpx;}
+.footer button{width: 326rpx;height: 106rpx;}
+.footer view{margin: 0px 20rpx;}
+
+.download{width: 100%; height: 130rpx;position: relative;top: 48rpx;background-color: rgb(229,229,229);}
+.download text{letter-spacing: 0.6rpx;position: relative;top: 32rpx;left: 20rpx;font-size: 28rpx;}
+.downloadBtn{width: 116rpx;height: 76rpx; font-size: 25rpx;background-color: rgb(55,108,177);color: white;position: absolute;right: 18rpx;top: 35rpx; box-shadow: 0px 8rpx 16rpx 0px rgba(77,120,146,0.38)}

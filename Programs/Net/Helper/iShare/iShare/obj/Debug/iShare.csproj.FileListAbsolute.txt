@@ -1,0 +1,14 @@
+D:\资料\类库\iShare\iShare\bin\Debug\iShare.dll
+D:\资料\类库\iShare\iShare\bin\Debug\iShare.pdb
+D:\资料\类库\iShare\iShare\obj\Debug\iShare.csproj.CoreCompileInputs.cache
+D:\资料\类库\iShare\iShare\obj\Debug\iShare.dll
+D:\资料\类库\iShare\iShare\obj\Debug\iShare.pdb
+D:\资料\类库\iShare\iShare\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\资料\类库\iShare\iShare\bin\Debug\NPOI.dll
+D:\资料\类库\iShare\iShare\bin\Debug\NPOI.OOXML.dll
+D:\资料\类库\iShare\iShare\bin\Debug\NPOI.OpenXml4Net.dll
+D:\资料\类库\iShare\iShare\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\资料\类库\iShare\iShare\bin\Debug\NPOI.xml
+D:\资料\类库\iShare\iShare\obj\Debug\iShare.csproj.CopyComplete
+D:\资料\类库\iShare\iShare\bin\Debug\Newtonsoft.Json.dll
+D:\资料\类库\iShare\iShare\bin\Debug\Newtonsoft.Json.xml

@@ -1,0 +1,6 @@
+微信测试号地址：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login
+微信公众号地址：https://mp.weixin.qq.com/
+微信公众号文档地址：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842
+
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx8b1e8f1441e6cbe9&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect

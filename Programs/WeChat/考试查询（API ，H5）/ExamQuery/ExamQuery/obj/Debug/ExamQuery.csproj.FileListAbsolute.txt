@@ -1,0 +1,254 @@
+D:\Projects\ExamQuery\ExamQuery\bin\ExamQuery.dll.config
+D:\Projects\ExamQuery\ExamQuery\bin\ExamQuery.dll
+D:\Projects\ExamQuery\ExamQuery\bin\ExamQuery.pdb
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\csc.exe
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\csc.exe.config
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\csc.rsp
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\csi.exe
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\csi.exe.config
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\csi.rsp
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.AppContext.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Collections.Immutable.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Console.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Diagnostics.Process.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.IO.Compression.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.IO.FileSystem.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.IO.Pipes.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Reflection.Metadata.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Security.AccessControl.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Security.Claims.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Threading.Thread.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.ValueTuple.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Xml.XPath.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\vbc.exe
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\vbc.exe.config
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\vbc.rsp
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\VBCSCompiler.exe
+D:\Projects\ExamQuery\ExamQuery\bin\roslyn\VBCSCompiler.exe.config
+D:\Projects\ExamQuery\ExamQuery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Projects\ExamQuery\ExamQuery\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects\ExamQuery\ExamQuery\bin\Newtonsoft.Json.dll
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Helpers.dll
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Mvc.dll
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Razor.dll
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Webpages.Deployment.dll
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Webpages.dll
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Webpages.Razor.dll
+D:\Projects\ExamQuery\ExamQuery\bin\Newtonsoft.Json.xml
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Razor.xml
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Webpages.xml
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Webpages.Deployment.xml
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Webpages.Razor.xml
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Helpers.xml
+D:\Projects\ExamQuery\ExamQuery\bin\System.Web.Mvc.xml
+D:\Projects\ExamQuery\ExamQuery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Projects\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\Projects\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Webpages.resources.dll
+D:\Projects\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+D:\Projects\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+D:\Projects\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\Projects\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\Projects\ExamQuery\ExamQuery\obj\Debug\ExamQuery.csprojAssemblyReference.cache
+D:\Projects\ExamQuery\ExamQuery\obj\Debug\ExamQuery.csproj.CoreCompileInputs.cache
+D:\Projects\ExamQuery\ExamQuery\obj\Debug\ExamQuery.csproj.CopyComplete
+D:\Projects\ExamQuery\ExamQuery\obj\Debug\ExamQuery.dll
+D:\Projects\ExamQuery\ExamQuery\obj\Debug\ExamQuery.pdb
+D:\Projects\ExamQuery\ExamQuery\bin\iSchool.Library.dll
+D:\Projects\ExamQuery\ExamQuery\bin\Enyim.Caching.dll
+D:\Projects\ExamQuery\ExamQuery\bin\iSchool.Model.dll
+D:\Projects\ExamQuery\ExamQuery\bin\TopSdk.dll
+D:\Projects\ExamQuery\ExamQuery\bin\XingeApp.dll
+D:\Projects\ExamQuery\ExamQuery\bin\Common.dll
+D:\Projects\ExamQuery\ExamQuery\bin\iSchool.Library.pdb
+D:\Projects\ExamQuery\ExamQuery\bin\iSchool.Library.dll.config
+D:\Projects\ExamQuery\ExamQuery\bin\iSchool.Model.pdb
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.IO.Compression.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\VBCSCompiler.exe
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\ExamQuery.dll.config
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\ExamQuery.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\ExamQuery.pdb
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\csc.exe
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\csc.exe.config
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\csc.rsp
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\csi.exe
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\csi.exe.config
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\csi.rsp
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.AppContext.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Console.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.IO.Pipes.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Security.Claims.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Threading.Thread.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.ValueTuple.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Xml.XPath.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\vbc.exe
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\vbc.exe.config
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\vbc.rsp
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\Newtonsoft.Json.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Helpers.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Mvc.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Razor.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Webpages.Deployment.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Webpages.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Webpages.Razor.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\Newtonsoft.Json.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Razor.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Webpages.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Webpages.Deployment.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Webpages.Razor.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Helpers.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\System.Web.Mvc.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\zh-Hans\System.Web.Webpages.resources.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\obj\Debug\ExamQuery.csproj.CoreCompileInputs.cache
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\obj\Debug\ExamQuery.csproj.CopyComplete
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\obj\Debug\ExamQuery.dll
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\obj\Debug\ExamQuery.pdb
+C:\Users\SXB-L\Documents\WeChat Files\loy572889855\Files\ExamQuery\obj\Debug\ExamQuery.csprojAssemblyReference.cache
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.IO.Compression.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\VBCSCompiler.exe
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\ExamQuery.dll.config
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\ExamQuery.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\ExamQuery.pdb
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\csc.exe
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\csc.exe.config
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\csc.rsp
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\csi.exe
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\csi.exe.config
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\csi.rsp
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.AppContext.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Collections.Immutable.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Console.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Diagnostics.Process.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.IO.FileSystem.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.IO.Pipes.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Reflection.Metadata.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Security.AccessControl.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Security.Claims.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Security.Principal.Windows.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Threading.Thread.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.ValueTuple.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Xml.XmlDocument.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Xml.XPath.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\vbc.exe
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\vbc.exe.config
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\vbc.rsp
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\roslyn\VBCSCompiler.exe.config
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\Microsoft.Web.Infrastructure.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\Newtonsoft.Json.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Helpers.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Mvc.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Razor.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Webpages.Deployment.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Webpages.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Webpages.Razor.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\Newtonsoft.Json.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Razor.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Webpages.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Webpages.Deployment.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Webpages.Razor.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Helpers.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\System.Web.Mvc.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Razor.resources.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Webpages.resources.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Webpages.Deployment.resources.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Helpers.resources.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\zh-Hans\System.Web.Mvc.resources.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\obj\Debug\ExamQuery.csproj.CoreCompileInputs.cache
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\obj\Debug\ExamQuery.csproj.CopyComplete
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\obj\Debug\ExamQuery.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\obj\Debug\ExamQuery.pdb
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\obj\Debug\ExamQuery.csprojAssemblyReference.cache
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\iShare.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\NPOI.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\NPOI.OOXML.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\ICSharpCode.SharpZipLib.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\NPOI.OpenXmlFormats.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\NPOI.OpenXml4Net.dll
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\iShare.pdb
+D:\资料\MVC\广东考试查询\ExamQuery\ExamQuery\bin\NPOI.xml

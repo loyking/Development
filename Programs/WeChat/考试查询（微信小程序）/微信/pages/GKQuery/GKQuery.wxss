@@ -1,0 +1,39 @@
+page{background-color: #EFEFEF;font-size: 30rpx;}
+.body{position: relative;width: 100%;}
+.queryContainer{width: 694rpx;height: 812rpx; border-radius:10rpx; margin:  0px auto; background-color:white; position: relative; top: 44rpx;}
+.txt{border: 2rpx solid rgba(151,151,151,0.29); width:460rpx; height: 74rpx; border-radius: 10rpx;}
+.Title{font-size: 30rpx;padding-left: 36rpx;}
+.Container{display: flex;flex-direction: row; line-height: 74rpx;padding: 26rpx 0px;}
+.TermsOfService{font-size: 26rpx;position: absolute;bottom: 60rpx;padding-left: 180rpx;}
+#TermsOfServiceChe{zoom: 60%;position: relative;bottom: 4rpx;}
+.ShengFen{width: 460rpx;height: 74rpx;border: 2rpx solid rgba(151,151,151,0.29); border-radius: 10rpx;position: relative;}
+.icon{border-top: 9rpx solid transparent;border-right: 9rpx solid black;border-bottom: 9rpx solid transparent;transform: rotate(90deg);position: absolute;right: 20rpx;top: 9.5px;}
+.icon1{border-top: 9rpx solid transparent;border-right: 9rpx solid black;border-bottom: 9rpx solid transparent;transform: rotate(270deg);position: absolute;right: 20rpx;bottom: 19rpx;}
+.query{padding-left: 30rpx;}
+.QueryView{margin-left: 30rpx;}
+.AdmissionsResultView{padding-left: 180rpx; width: 460rpx;}
+.footer{width: 694rpx;margin: 0px auto;display: flex;flex-direction: row;margin-top: 226rpx;font-size: 17px; letter-spacing: -0.4px;}
+.footer button{width: 326rpx;height: 106rpx;}
+.footer view{margin: 0px 20rpx;}
+
+/*下拉列表*/
+.select_box{position: relative;}
+.select{ box-sizing: border-box;width: 100%;height: 70rpx;border-radius: 8rpx;display: flex;
+align-items: center;padding: 0 20rpx;}
+.select_text{font-size: 30rpx;flex: 1;}
+.select_img{width: 40rpx;height: 40rpx;display: block;transition:transform 0.3s;}
+.select_img_rotate{transform:rotate(180deg); }
+.option_box{position:relative;right: 2rpx; width: 464rpx; box-sizing: border-box;height: 0;margin-top: 1rpx;
+overflow-y: auto;border-top: 0;background: #fff;transition: height 0.3s;z-index: 10;}
+.option{display: block;line-height: 40rpx;font-size: 30rpx;padding: 10rpx;border-bottom: 2rpx solid #efefef;}
+
+/*遮罩层*/
+    		.overfloat{position:absolute;top:0;left:0;z-index:100;width:100%;height:100%;background-color:rgba(1,1,1,.5)}
+    		.guize_html{margin-left: 28rpx;margin-top: 10rpx; width: 694rpx; border-radius:5rpx;background-color:#fff;color:#000;font-size:30rpx;}
+      .AgreementTitle{font-size: 40rpx;font-weight: bold;text-align: center;padding-top: 38rpx;}
+			.Agreement{display: block;padding-left: 60rpx;font-size: 30rpx;}
+      .Must{padding: 40rpx 0px;text-align: center;font-weight: bold;}
+			.Iagree{ width: 100%; height: 114rpx; border-radius: 0px 0px 4px 4px; text-align: center; background-color: #1790FB; line-height: 100rpx; font-size: 40rpx; color: white;}
+
+
+ .mask{background: rgba(0,0,0,0); position: absolute; top: 0;left: 0; width: 750rpx;height: 100%; z-index: 9;}

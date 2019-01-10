@@ -1,0 +1,208 @@
+﻿
+@{
+    ViewBag.Title = "广东省高考成绩查询";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+@section link{
+    <style type="text/css">
+        .container {
+            width: 6.52rem;
+            height: 8.12rem;
+            background-color: white;
+            border-radius: 0.1rem;
+            margin: 0px auto;
+            position: relative;
+            top: 0.44rem;
+        }
+
+        .query {
+            font-size: 0.3rem;
+            width: 100%;
+        }
+
+            .query input {
+                width: 4.6rem;
+                height: 0.7rem;
+                border-radius: 0.1rem;
+                border: 0.02rem solid rgba(151,151,151,0.29);
+                font-size: 0.26rem;
+            }
+
+            .query td {
+                padding-top: 0.5rem;
+            }
+
+
+        .btnBox {
+            margin: 0px auto;
+            text-align: center;
+            padding-top: 0.80rem;
+        }
+
+            .btnBox input {
+                width: 3.22rem;
+                height: 1.30rem;
+                border: 1px solid #1790FB;
+                color: #1790FB;
+                font-size: 0.36rem;
+                border-radius: 0.10rem;
+                margin-top: 1.50rem
+            }
+
+        .txt {
+            width: 4.60rem;
+            height: 0.76rem;
+            border-radius: 0.08rem;
+            border: 0.02rem solid rgba(151,151,151,0.29);
+            font-size: 0.3rem;
+            background-color: white;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        #error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+}
+
+<div class="container">
+    <table class="query">
+        <tr>
+            <td class="title">考生报名号</td>
+            <td><input id="ksh" placeholder=" 请输入14位考生报名号" type="text" /></td>
+        </tr>
+        <tr>
+            <td class="title">准考证号</td>
+            <td><input id="zkzh" placeholder=" 请输入9位准考证号" type="text" /></td>
+        </tr>
+        <tr>
+            <td class="title">身份证号</td>
+            <td><input id="sfz" placeholder=" 请输入身份证号" type="text" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="error"></td>
+        </tr>
+    </table>
+</div>
+
+<div class="btnBox">
+    <span><input id="cjQuery" style="background-color: #1790FB ; color: white;" type="button" value="成绩查询" /></span>
+    <span><input id="AdmissionsRez" style="background-color: #EFEFEF;" type="button" value="录取结果查询" /></span>
+</div>
+
+@section script{
+    <script type="text/javascript" src="~/Script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#cjQuery").click(function () {
+
+                var query = 0;
+
+                var ksh = $("#ksh").val()
+                var zkzh = $("#zkzh").val()
+                var sfz = $("#sfz").val()
+                var error = $("#error")
+
+
+                if (ksh == "")
+                {
+                    error.text("考生报名号不允许为空")
+                    $("#ksh").focus()
+                }
+                else if (zkzh == "")
+                {
+                    error.text("准考证号不允许为空")
+                    $("#zkzh").focus()
+                }
+                else if (sfz == "")
+                {
+                    error.text("身份证号不允许为空")
+                    $("#sfz").focus()
+                }
+                else
+                {
+                    if ($("#ksh").val().length != 14) {
+                        error.text("考生报名号长度必须为14")
+                        $("#ksh").focus()
+                    }
+                    else if ($("#zkzh").val().length != 9) {
+                        error.text("准考证号长度必须为9")
+                        $("#zkzh").focus()
+                    }
+                    else if (!CheckSfz($("#sfz").val()))
+                    {
+                        error.text("请输入正确的身份证格式")
+                        $("#sfz").focus();
+                    }
+                    else
+                    {
+                        $.ajax({
+                            type: "get",
+                            url: "/Home/Query?ProvinceKey=510000&StudentId=" + ksh + "&Zkzh=" + zkzh + "&Sfz=" + sfz + "&QueryType=1",
+                            success: function (data) {
+                                /*if (data.Existence) {
+                                    location.href = "/GKScoreResult";
+                                }
+                                else {
+                                    location.href = "/ErrorOrEmpty/Empty";
+                                }*/
+                                location.href = "http://wx.scedu.net/gk_cj2018.htm";
+                            }
+                        });
+                    }
+                }
+            })
+
+            $("#ksh").blur(function () {
+                if ($("#ksh").val() != "" && $("#ksh").val().length==14)
+                {
+                    $("#error").text("");
+                }
+            })
+
+            $("#zkzh").blur(function () {
+                if ($("#zkzh").val() != "" && $("#zkzh").val().length==9) {
+                    $("#error").text("");
+                }
+            })
+
+            $("#sfz").blur(function () {
+                if (CheckSfz($("#sfz").val())) {
+                    $("#error").text("");
+                }
+            })
+
+            $("#AdmissionsRez").click(function ()
+            {
+                location.href = "/ErrorOrEmpty";
+            })
+
+
+        })
+
+        //身份证验证格式
+        function CheckSfz(data)
+        {
+            var reg = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
+            var reg1 = /^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}[0-9Xx]$/;
+
+            if (data.length == 18)
+            {
+                return reg.test(data)
+            }
+            else if (data.length == 15)
+            {
+                return reg1.test(data)
+            }
+            else
+            {
+                return false;
+            }
+        }
+    </script>
+}

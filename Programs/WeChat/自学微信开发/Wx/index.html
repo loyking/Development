@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="二维码" id="btn" />
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js" ></script>
+		<script>
+			$(function(){
+				$("#btn").click(function(){
+					$.ajax({
+						url:"https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=14_pcfgStl4viTbi8mKBclvww8xchbl7aB8JULBtboPYhcmNK9E8YfveDR7X-E3XfUmW7Fo7vRBzFNeZ6ZkAs4jnSpLFBQAd0C2a-pVwZnsveU6Yzc_HJqZN8UdxLTrnUBdyp3jTEw7h9-iySkqBCRfAHASTI",
+						type:"POST",
+						dataType:'JSON',
+						data:{"expire_seconds": 7200, "action_name": "QR_SCENE", "action_info": {"scene": {"scene_id": 123}}},
+						success:function(data)
+						{
+							console.log(data)
+						}
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

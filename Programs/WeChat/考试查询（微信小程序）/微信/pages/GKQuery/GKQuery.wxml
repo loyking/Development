@@ -1,0 +1,89 @@
+<view class='body'>
+  <view class='queryContainer'>
+    <view class='Container' style='padding-top: 60rpx;'>
+      <text class='Title' decode="{{true}}">省&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份</text>
+
+      <!--下拉列表-->
+        <view class='select_box ShengFen QueryView'>
+            <view id='top' class='icon'></view>
+            <view id='bottom' class='icon1'></view>
+          <view class='select' catchtap='selectTap'>
+            <text class='select_text'>{{List[Selectindex]}}</text>     
+          </view>
+      <view class='option_box' style='height:{{show?(List.length>5?300:(List.length-1)*70):0}}rpx;'>
+        <text class='option' wx:for='{{List}}' wx:key='this' wx:if='{{Selectindex!=index}}' data-index='{{index}}' catchtap='optionTap' style='border:2rpx solid rgba(151,151,151,0.29)'>{{item}}</text>
+    </view>
+      </view>
+      </view>
+
+    <view class='Container'>
+      <text class='Title'>准考证号</text>
+      <view class='query'>
+        <input class='txt' bindinput='zkzh' placeholder-style='font-size:13px; color:rgba(20,21,21,0.19);' placeholder="  请输入准考证号" />
+      </view>
+    </view>
+
+    <view class='Container'>
+      <text class='Title'>身份证号</text>
+      <view class='query'>
+        <input class='txt' bindinput='sfz' placeholder-style='font-size:13px; color:rgba(20,21,21,0.19);' placeholder="  请输入考生身份证号" />
+      </view>
+    </view>
+
+    <view class='AdmissionsResultView'>
+      <text style='color:rgb(23,144,251);font-size:26rpx;' decode="{{true}}">注意：录取结果以录取院校下发的录取通知书为准.</text>
+    </view>
+
+    <view class='TermsOfService'>
+        <checkbox bindtap='check' checked='{{checked}}' id='TermsOfServiceChe'></checkbox>
+        我已阅读并接受<text style='color:rgb(23,144,251)' bindtap='ShowBox'>"服务条款"</text>
+    </view>
+
+  </view>
+
+  <view class='footer'>
+    <button style='background-color: rgb(23,144,251); color: white;' bindtap='scoreQuery'>成绩查询</button>
+    <view></view>
+    <button style='border:1px solid rgb(23,144,251); color:rgb(23,144,251);background-color: #EFEFEF;' bindtap='GKAdmissionsResult'>录取结果查询</button>
+  </view>
+</view>
+
+<!--遮罩层  委托授权-->
+		<view class="overfloat" style='display:{{ShowOrHied}}'>
+			<view class="guize_html">
+      
+				<view class='AgreementTitle'>授权委托</view>
+				<text class="Agreement">
+鉴于网络的特性，本网站将无可避免地与您
+产生直接或间接的互动关系，故特此说明本
+网站对用户个人信息所采取的收集、使用和
+保护政策，请您务必仔细阅读：
+
+（1）本次成绩数据内容并非由上学帮提
+供，上学帮不承担由于内容的不一致性所引
+起的一切争议和法律责任，查询结果最终以
+广东省教育考试院数据为准。
+（2）本网站将对您所提供的资料进行严格
+的管理及保护，本网站将使用相应的技术，
+防止您的个人资料丢失、被盗用或遭篡改。
+（3）当政府机关依照法定程序要求本网站
+披露个人资料时，本网站将根据执法单位之
+要求或为公共安全之目的提供个人资料。在
+此情况下之任何披露，本网站均得免责。
+（4）本网站将建立和维持一合理的程序，
+以保护未成年人个人资料的保密性及安全
+性。本网站郑重声明：未成年人参加网上活
+动应事先得到家长或其法定监护人的可经查
+证的同意。
+				</text>
+
+        <view class='Must'>您必须完全同意以上协议才能使用上学帮的服务</view>
+				
+				<view class="Iagree" bindtap='Agree'>
+					我同意
+				</view>
+			</view>
+		</view>
+
+<view class='mask' hidden='{{!show}}'bindtap='closeTap'></view>
+

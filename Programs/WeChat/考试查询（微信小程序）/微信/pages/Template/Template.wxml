@@ -1,0 +1,28 @@
+
+<template name='SelectBox'>
+<!--省份下拉列表-->
+        <view class='select_box border QueryView'>
+            <view class='icon'></view>
+            <view class='icon1'></view>
+          <view class='select' catchtap='selectTap'>
+            <text class='select_text' data-ProvinceKey='{{item.List[item.Selectindex].ProvinceKey}}'>{{item.List[item.Selectindex].ProvinceName}}</text>     
+          </view>
+      <view class='option_box' style='height:{{item.Provinceshow?(item.List.length>5?300:(item.List.length)*65):0}}rpx;'>
+        <text class='option' wx:for='{{item.List}}' wx:key='this' data-index='{{index}}' catchtap='optionTap' wx:if='{{index!=item.Selectindex}}'>{{item.ProvinceName}}</text>
+    </view>
+    
+      </view>
+
+    <!--城市-->
+      <view class='select_box border QueryView'>
+            <view class='icon'></view>
+            <view class='icon1'></view>
+          <view class='select' catchtap='selectCity'>
+            <text class='select_text' data-CityKey='{{item.City[item.CityIndex].CityKey}}'>{{item.City[item.CityIndex].CityName}}</text>     
+          </view>
+      <view class='option_box' style='height:{{item.Cityshow?(item.City.length>5?300:(item.City.length)*65):0}}rpx;'>
+        <text class='option' wx:for='{{item.City}}' wx:key='this' data-index='{{index}}' catchtap='CityoptionTap' wx:if='{{item.CityIndex!=index}}'>{{item.CityName}}</text>
+    </view>
+      </view>
+
+</template>

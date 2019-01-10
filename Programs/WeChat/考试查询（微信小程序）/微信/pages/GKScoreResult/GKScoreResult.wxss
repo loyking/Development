@@ -1,0 +1,13 @@
+page{background-color: #EFEFEF;font-size: 30rpx;}
+.body{position: relative;width: 100%;}
+.queryContainer{width: 694rpx;height: 812rpx; border-radius:10rpx; margin:  0px auto; background-color:white; position: relative; top: 44rpx;}
+.title{width: 100%; height: 112rpx; border-radius: 8rpx 8rpx 0px 0px; text-align: center; background-color: #1790FB; line-height: 100rpx; font-size: 20px; color: white;}
+
+.ResultBox{margin-top: 44rpx;margin-left: 22rpx;font-size: 15px;color: rgb(57,60,60);}
+.ResultTitle{font-weight: bold;color: black;}
+.ResultBox view{float: left; }
+.ResultBox view view{border: 2rpx solid rgb(214,214,214);line-height: 84rpx; width: 324rpx;height: 84rpx;text-align: center;}
+
+.footer{width: 694rpx;margin: 0px auto;display: flex;flex-direction: row;margin-top: 226rpx;font-size: 17px; letter-spacing: -0.4px;}
+.footer button{width: 326rpx;height: 106rpx;}
+.footer view{margin: 0px 20rpx;}

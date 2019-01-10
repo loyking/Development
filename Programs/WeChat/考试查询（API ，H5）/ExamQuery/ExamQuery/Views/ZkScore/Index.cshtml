@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "广州中考成绩查询";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+@section link{
+    <style type="text/css">
+        .container {
+            width: 6.52rem;
+            height: 8.12rem;
+            background-color: white;
+            border-radius: 0.1rem;
+            margin: 0px auto;
+            position: relative;
+            top: 0.44rem;
+        }
+
+        .query {
+            font-size: 0.3rem;
+            width: 100%;
+        }
+
+            .query input {
+                width: 4.6rem;
+                height: 0.7rem;
+                border-radius: 0.1rem;
+                border: 0.02rem solid rgba(151,151,151,0.29);
+                font-size: 0.26rem;
+            }
+
+            .query td {
+                padding-top: 0.5rem;
+            }
+
+
+        .btnBox {
+            margin: 0px auto;
+            text-align: center;
+            padding-top: 0.80rem;
+        }
+
+            .btnBox input {
+                width: 3.22rem;
+                height: 1.30rem;
+                border: 1px solid #1790FB;
+                color: #1790FB;
+                font-size: 0.36rem;
+                border-radius: 0.10rem;
+                margin-top: 1.50rem
+            }
+
+        .txt {
+            width: 4.60rem;
+            height: 0.76rem;
+            border-radius: 0.08rem;
+            border: 0.02rem solid rgba(151,151,151,0.29);
+            font-size: 0.3rem;
+            background-color: white;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        #error {
+            color: red;
+            text-align: center;
+        }
+
+        .queryTite{font-size:0.4rem; text-align:center; padding-top:0.5rem;}
+    </style>
+}
+
+<div class="container">
+    <div class="queryTite">广州中考成绩查询</div>
+    <table class="query">
+        <tr>
+            <td class="title">准考证号</td>
+            <td><input id="zkzh" placeholder=" 请输入准考证号" type="text" /></td>
+        </tr>
+        <tr>
+            <td class="title">登陆密码</td>
+            <td><input id="pwd" placeholder=" 请输入登陆密码" type="password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="error"></td>
+        </tr>
+    </table>
+</div>
+
+<div class="btnBox">
+    <span><input id="cjQuery" style="background-color: #1790FB ; color: white;" type="button" value="成绩查询" /></span>
+    <span><input id="AdmissionsRez" style="background-color: #EFEFEF;" type="button" value="录取结果查询" /></span>
+</div>
+
+@section script{
+    <script type="text/javascript" src="~/Script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#cjQuery").click(function () {
+
+                var query = 0;
+
+
+                var zkzh = $("#zkzh").val()
+                var pwd = $("#pwd").val()
+                var error = $("#error")
+
+
+                if (zkzh == "")
+                {
+                    error.text("准考证号不允许为空")
+                    $("#zkzh").focus()
+                }
+                else if (pwd == "")
+                {
+                    error.text("登陆密码不允许为空")
+                    $("#pwd").focus()
+                }
+                else
+                {
+                        $.ajax({
+                            type: "get",
+                            url: "/Home/Query?ProvinceKey=440000&CityKey=440100&Zkzh=" + zkzh + "&Sfz=" + pwd + "&QueryType=2",
+                            success: function (data) {
+
+                                if (data.Existence) {
+                                    location.href = "/ZkScoreResult";
+                                }
+                                else {
+                                    location.href = "/ErrorOrEmpty/Empty";
+                                }
+                            }
+                        });
+                 }
+            })
+
+            $("#pwd").blur(function () {
+                if ($("#pwd").val() != "")
+                {
+                    $("#error").text("");
+                }
+            })
+
+            $("#zkzh").blur(function () {
+                if ($("#zkzh").val() != "") {
+                    $("#error").text("");
+                }
+            })
+
+
+            $("#AdmissionsRez").click(function ()
+            {
+                var zkzh = $("#zkzh").val()
+                var pwd = $("#pwd").val()
+                var error = $("#error")
+
+
+                if (zkzh == "") {
+                    error.text("准考证号不允许为空")
+                    $("#zkzh").focus()
+                }
+                else if (pwd == "") {
+                    error.text("登陆密码不允许为空")
+                    $("#pwd").focus()
+                }
+                else {
+                    $.ajax({
+                        type: "get",
+                        url: "/Home/Query?ProvinceKey=440000&CityKey=440100&Zkzh=" + zkzh + "&Sfz=" + pwd + "&QueryType=4",
+                        success: function (data) {
+                            if (data.Existence) {
+                                location.href = "/ZkAdmissionsResult";
+                            }
+                            else {
+                                location.href = "/ErrorOrEmpty/Empty";
+                            }
+                        }
+                    });
+                }
+            })
+
+
+        })
+
+    </script>
+}

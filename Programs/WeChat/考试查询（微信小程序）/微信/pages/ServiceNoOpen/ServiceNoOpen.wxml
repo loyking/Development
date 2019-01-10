@@ -1,0 +1,18 @@
+<view class='body'>
+  <view class='queryContainer'>
+    <view>
+      <view><image src='../Img/invalidName.png'></image></view>
+      <text>未查询到相关结果</text>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <button style='background-color: rgb(23,144,251); color: white;' bindtap='BackIndex'>返回首页</button>
+  </view>
+
+
+</view>
+  <view class='download'>
+    <text>关注上学帮公众号，获取一手教育咨询</text>
+    <button class='downloadBtn'>关注</button>
+  </view>

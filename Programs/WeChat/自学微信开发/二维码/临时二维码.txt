@@ -1,0 +1,3 @@
+"ticket":"gQEV8DwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyenpiRWhUTnRmWmkxX3c3bTFyY0kAAgTgOq9bAwQAjScA",
+"expire_seconds":2592000,
+"url":"http:\\weixin.qq.com\q\02zzbEhTNtfZi1_w7m1rcI"

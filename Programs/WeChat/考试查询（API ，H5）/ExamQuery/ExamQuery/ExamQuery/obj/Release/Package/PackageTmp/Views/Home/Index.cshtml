@@ -1,0 +1,179 @@
+﻿
+@{
+    ViewBag.Title = "首页";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section link{
+    <style type="text/css">
+        .footerBox {
+            height: 1.08rem;
+            width: 100%;
+            margin-top: 0.76rem;
+            position: relative;
+            bottom: 0px;
+        }
+
+        .group {
+            text-align: center;
+        }
+
+            .group img {
+                width: 3.34rem;
+                height: 4.24rem;
+            }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .examgroup {
+            background: url(/Img/fontBg.png);
+            font-family: "微软雅黑";
+            font-size: 0.23rem;
+            width: 3.34rem;
+            margin: 0px auto;
+            height: 1.2rem;
+            margin-top: -0.35rem;
+            line-height: 1.2rem;
+            box-shadow: 0px 0.12rem 0.46rem 0px rgba(169,174,191,0.42);
+            border-radius: 0px 0px 0.05rem 0.05rem;
+            color:black;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+            .examgroup:hover {
+                cursor: pointer;
+            }
+
+        .container > div {
+            margin: 0.20rem 0.22rem;
+        }
+
+        .footerBox img {
+            width: 100%;
+        }
+
+        .footer-content {
+            width: 100%;
+            height: 0.75rem;
+            position: relative;
+            z-index: 10;
+            color: rgb(255,255,255);
+        }
+
+        .Copywriting {
+            font-size: 0.30rem;
+            width: 100%;
+            text-align: center;
+            line-height: 1.08rem;
+        }
+
+        .btn {
+            font-size: 0.20rem;
+            border: 0.02rem solid rgb(55,108,177);
+            width: 1.44rem;
+            height: 0.76rem;
+            background-color: rgb(55,108,177);
+            border-radius: 0.05rem;
+            color: rgb(255,255,255);
+            text-align: center;
+            line-height: 0.76rem;
+            position: absolute;
+            top: 0.15rem;
+            right: 0.18rem;
+        }
+
+        @@media screen and (max-width: 750px) {
+            .footerBox {
+                position: absolute;
+            }
+            .container > div {
+                margin: 0.15rem 0.22rem;
+            }
+            .examgroup {height:1rem;line-height:1rem;}
+        }
+    </style>
+}
+
+    <div class="BodyBox">
+        <div class="container">
+            <div class="group" id="Gk">
+                <a href="/Home/GaoKaoAction">
+                    <img src="/Img/test1.png">
+                    <div class="examgroup">
+                        高考查询
+                    </div>
+                </a>
+            </div>
+
+            <div class="group" id="ZhongK">
+                <a href="/ErrorOrEmpty">
+                    <img src="/Img/test2.png">
+                    <div class="examgroup">
+                        中考查询
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="group" id="Zk">
+                <a href="/ErrorOrEmpty">
+                    <img src="/Img/test3.png">
+                    <div class="examgroup">
+                        自考查询
+                    </div>
+                </a>
+            </div>
+
+            <div class="group" id="CK">
+                <a href="/ErrorOrEmpty">
+                    <img src="/Img/test4.png">
+                    <div class="examgroup">
+                        成考查询
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="footerBox" id="footerDiv">
+    <img style="position:absolute;" id="footerImg" src="" />
+    <div class="footer-content" style="display: flex;flex-direction: row;">
+        <div class="Copywriting" id="Text"></div>
+        <div class="btn" id="btnText" style="display:none; cursor:pointer;"></div>
+    </div>
+</div>
+@section script{
+    <script type="text/javascript" src="~/Script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Home/GetCopywritingInfo?query=false",
+                success: function (data) {
+                    $("#footerImg").attr("src", data.ImgUrl)
+                    $("#Text").text(data.Banner)
+                    if (data.BtnText != "") {
+                        $("#btnText").css("display", "block").text(data.BtnText)
+                    }
+                }
+            })
+
+            $("#Text").click(function () {
+                //点击底部图片
+            })
+
+            $("#btnText").click(function () {
+                //点击底部按钮
+            })
+        })
+        
+    </script>
+}

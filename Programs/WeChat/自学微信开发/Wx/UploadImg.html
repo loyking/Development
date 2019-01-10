@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<a href="tel:15217195390">哈哈哈</a>
+				<input name="media" id="file" type="file" />
+				
+				<input type="button" id="btn" value="提交" />
+				
+				<script type="text/javascript" src="js/jquery-1.10.2.min.js" ></script>
+				<script>
+					$(function(){
+						
+						$("#btn").click(function(){
+							$.ajax({
+								type:"post",
+								url:"https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=14_IycD_vAUK5u7ZsXtWmbw6mVEauJU4IDKtrgzg5iWgUjmu2nJU6gubFHWGdbnaPpMBXhEYAVK-jmrzwm4smKzu5SnR3fCtwUaQI9-WP4BXLt32bsdSa82w4L230AIKNfABAQSV",
+								async:true,
+								dataType:{"expire_seconds": 604800, "action_name": "QR_STR_SCENE", "action_info": {"scene": {"scene_str": "test"}}},
+								success:function(data){
+									console.log(data)
+								}
+							});					
+						})
+						
+					})
+				</script>
+	</body>
+</html>

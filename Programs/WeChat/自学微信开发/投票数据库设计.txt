@@ -1,0 +1,15 @@
+create table UserInfo(
+	Id uniqueidentifier primary key,
+	UserName varchar(50) not null,
+	Img nvarchar(max) not null
+)
+select * from UserInfo
+insert into UserInfo values('3bc99a13-4dfe-4035-b11c-3b7f8fe6d729','≤‚ ‘1','http://www.loyking.cn/img/2.jpg')
+insert into UserInfo values('9dce86d3-2655-4836-a943-4eb4416d75c0','≤‚ ‘2','http://www.loyking.cn/img/3.jpg')
+
+create table UserVote(
+	Id uniqueidentifier primary key,
+	UserInfoId uniqueidentifier not null,
+	OpenId char(28) not null,
+	VoteDate datetime not null
+)

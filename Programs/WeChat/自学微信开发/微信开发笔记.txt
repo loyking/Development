@@ -1,0 +1,152 @@
+公众号开发
+
+1、微信公众号token配置，URL填写自己写的方法（用来检测微信的请求，检测token是否正确），微信请求为GET，参数带有
+signature：微信加密签名
+timestamp：时间戳
+nonce：随机数
+echostr：随机字符串
+
+首先将token（与微信后台填写一致区分大小写），timestamp，nonce进行排序，然后进行哈希加密，如果加密结果与signature一致，则验证成功，
+方法返回微信端带来的echostr
+
+access_token获取之前需要在微信后台=>基本配置设置白名单的IP地址（多个ip用回车隔开），获取ip（http://ip.qq.com/），设置成功后只有在白名单中的IP地址掉一个获取access_token
+才会成功，否指返回-1000（未知错误）。
+access_token：是公众号的全局唯一票据，公众号接口调用都需要access_token，存储空间为512个字符空间，且有效时常为2个小时（7200秒）
+每天上线请求2000次。如果上次access_token未失效开发者再次请求，则上次access_token失效，只需要保证两个小时后再次获取即可。
+获取（GET请求）access_token：https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
+
+消息自动回复（代码/微信公众号后台自动设置）
+当在后台的开发=》基本配置中（服务器配置）已设置为启动项，则微信会自动关闭在后台中设置的自动回复。设置后用户发送的消息都会发送到（服务器配置的地址中）
+开发者则需要在服务器配置中，进行消息处理，微信会以post请求将信息发送到开发者服务器（微信会向开发者服务器请求3次，如果服务器无法在5秒内做出响应即
+可返回空，微信会做对应的判断，三次重试后，依旧没有及时回复任何内容，系统自动在粉丝会话界面出现错误提示“该公众号暂时无法提供服务，请稍后再试”。）
+用户发送的信息则以xml格式存储在InputStream，开发进行流读取
+byte[] byts = new byte[HttpContext.Current.Request.InputStream.Length];
+HttpContext.Current.Request.InputStream.Read(byts, 0, byts.Length);
+string req = System.Text.Encoding.Default.GetString(byts);
+req = HttpContext.Current.Server.UrlDecode(req);
+		
+req（用户发送的消息内容，xml格式），具体格式（https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140453）中查看可以相应的格式
+目前微信只支持（文本消息（text），图片消息（image），语音消息（voice），视频消息（video），小视频消息（shortvideo），地理位置消息（location），
+链接消息（link）），返回对应格式消息则按照对应的xml进行封装返回即可（注意必须为xml格式）
+
+微信公众号素材管理
+微信公号素材分为两块，零时素材与永久素材
+
+临时：
+	http请求方式：POST/FORM，使用https
+	https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&type=TYPE
+	在素材上传（post）后，微信端会返回一个media_id给开发者，开发者可以用该id进行查找存在微信端的素材，即id为素材标志，微信端只认id
+	临时素材类型分别有：（图片、语音、视频、缩略图），媒体文件在微信后台保存有效时常为3天，即3天后media_id失效
+
+永久：
+	1、公众号素材库保存得总数量有限，图片为5000，其他为1000
+
+
+
+
+消息模块
+1、图片响应，首先需要开发者上传图片到微信服务器，在微信服务器上存储（新增永久素材=》）
+
+
+坑1：ToUserName（用户的）与FromUserName （公众号的），很容易写反
+
+
+遇到的问题：
+	1、
+	     微信客服消息：errcode=45015, errmsg=response out of time limit or subscription is canceled（意思是用户长时间没有跟公众号进行互动，导致微信端以为客服消息推送垃圾信息（用户处于离线状态））
+	    解决方案：如果是做提示消息（例如：支付成功，做了某项操作后需要进行推送消息提醒用户的操作成功，可以使用模板信息），如果提示并不频繁操作（且并不隔长时间在进行推送信息），则可以继续使用客服消息
+
+
+如果没有启动服务器配置，则可以在公众号后台的共能=》自动回复中自己设置消息回复
+
+
+注意：
+	1、获取关注公众号的用户openid集合（一次性只能获取1000条），接口：https://api.weixin.qq.com/cgi-bin/user/get?access_token=&next_openid=
+	      next_openid从这个id的下条记录开始取值
+	     接口会返回关注人数总数，1000个openid，最后一个openid（这次接口调用获取到的最后一个openid，可以用来做去下1000个openid的参数（next_openid））
+	    重点：该接口有数据延迟，不会返回当天的关注信息，只会返回之前那的所有关注着信息（以及关注总人数），次日8点刷新前一天的总数据
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+公众号网页开发
+
+a、配置
+（在正式微信公号后台配置，域名必须备案，这个配置不允许为IP地址）（微信公众测试号中配置回调域名是允许为IP地址的）
+配置地址：https://mp.weixin.qq.com/debug/cgi-bin/sandboxinfo?action=showinfo&t=sandbox/index（测试号管理=》体验接口权限表=》网页服务=》网页帐号=》网页授权获取用户基本信息（修改））
+1、需要在微信公众号后台：开发 - 接口权限 - 网页服务 - 网页帐号 - 网页授权获取用户基本信息”的配置选项中，修改授权回调域名。这个域名不是一个url，不允许加http://
+2、回调域名配置成功后，授权回调域名配置规范为全域名，比如需要网页授权的域名为：www.qq.com，配置以后此域名
+下面的页面http://www.qq.com/music.html 、 http://www.qq.com/login.html 都可以进行OAuth2.0鉴权。
+但http://pay.qq.com 、 http://music.qq.com 、 http://qq.com无法进行OAuth2.0鉴权
+3、微信公号授权允许由第三方管理，如果授权第三方管理，则不需要做任何配置
+
+b、授权
+（授权有两种方式（静默式（无需进入微信端授权页面，在用户进入开发者页面时已经获取到code与state） | 点击式（进入微信端授权页面，当用户点击之后才能获取到code与state））
+（scope：应用授权作用域，snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid），snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且， 即使在未关注的情况下，只要用户授权，也能获取其信息 ））
+（如果scope填写的是snsapi_base返回的还是code与state，不会直接返回openid，拿到code之后还是需要调用第二步的接口，返回openid）
+1、用户同意授权，获取code：https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&redirect_uri=REDIRECT_URI&response_type=code&scope=SCOPE&state=STATE#wechat_redirect
+（用code换取的access_token与appid和appsecret换取的access_token不同，在第四步有详细说明）
+（access_token有效时常：7200秒）
+2、通过code换取网页授权access_token：https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code
+（由于access_token拥有较短的有效期，当access_token超时后，可以使用refresh_token进行刷新，refresh_token有效期为30天，当refresh_token失效之后，需要用户重新授权。）
+3、刷新access_token（如果需要）：https://api.weixin.qq.com/sns/oauth2/refresh_token?appid=APPID&grant_type=refresh_token&refresh_token=REFRESH_TOKEN
+（如果网页授权作用域为snsapi_userinfo，则此时开发者可以通过access_token和openid拉取用户信息了。）
+4、获取用户信息两种方式
+（该接口返回的access_token的作用域为调用微信api接口）
+  4.1、https://api.weixin.qq.com/cgi-bin/user/info?access_token=access_token&openid=openid（带有用户是否关注等信息），access_token是该（https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET）连接返回的access_token
+  （该接口返回的access_token只能在调用获取用户基本信息中用到，（获取用户基本信息（无关注），检测access_token是否过期（https://api.weixin.qq.com/sns/auth?access_token=ACCESS_TOKEN&openid=OPENID）））
+  4.2、http：GET（请使用https协议） https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN（只是返回用户基本进行），access_token是（ https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&secret=SECRET&code=CODE&grant_type=authorization_code）
+
+
+
+遇到的问题
+1、公众号后台验证token失败，原因：配置地址不一致或者加密结果错误
+2、redirect_uri 参数错误：配置安全域名不允许加http(www.loyking.cn)，就算是测试号也不允许，测试号可以直接填写外网地址（134.175.66.16）
+3、redirect_uri 与后台配置不一致：查看公众号域名授权地址填写，这里填写全域名，并不是单独的一个页面的指向地址，如果填写的是134.175.66.16\Ashx\Auto.ashx，则在该级下面的页面才能正确授权
+直接填写134.175.66.16即可
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+微信JS-SDK接口
+（先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”。与作用域的域名绑定不同，该js域名绑定后，微信JS-SDK只能在该域名下使用，其他地址无效）
+1、绑定域名
+2、引入JS文件，在调用JS-SDK之前需要引入微信的JS文件，文件地址：http://res.wx.qq.com/open/js/jweixin-1.4.0.js
+（接口注入前提是必须引入Wx的Js）
+（所有需要使用JS-SDK的页面必须先注入配置信息，否则将无法调用（同一个url仅需调用一次，对于变化url的SPA的web app可在每次url变化时进行调用,目前Android微信客户端不支持pushState的H5新特性，所以使用pushState来实现web app的页面会导致签名失败））
+3、通过config接口注入权限验证配置
+	配置：wx.config({
+    		debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+   		appId: '', // 必填，公众号的唯一标识
+    		timestamp: , // 必填，生成签名的时间戳
+    		nonceStr: '', // 必填，生成签名的随机串
+   		signature: '',// 必填，签名
+    		jsApiList: [] // 必填，需要使用的JS接口列表
+	    });
+①、时间戳：c#获得时间戳（DateTime.Now.ToUniversalTime().Ticks - 621355968000000000) / 10000000）
+②、随机串：随便生成一串字符即可
+③、签名：
+	（验证jsapi_ticket加密结果：https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign）
+	3.1、首先发起请求（（GET）https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi）得到jsapi_ticket，jsapi_ticket是微信JSSDK调用全局唯一凭据，有效时常7200秒（调用次数有限制）
+	3.2、得到jsapi_ticket之后开始签名算法：根据参与签名的字段包括noncestr（随机字符串）, 有效的jsapi_ticket, timestamp（时间戳）, url（当前网页的URL，不包含#及其后面部分） 。对所有待签名参数按照字段名的ASCII 码从小到大排序（字典序）后，使用URL键值对的格式（即key1=value1&key2=value2…）拼接成字符串string1。这里需要注意的是所有参数名均为小写字符。对string1作sha1加密，字段名和字段值都采用原始值，不进行URL 转义
+	3.3、拼接后格式：jsapi_ticket=jsapi_ticket&noncestr=noncestr&timestamp=timestamp&url=url
+	3.4、然后对拼接后的字符串进行SHA1加密（得到signature（签名））
+	3.5、注意事项：
+		a.签名用的noncestr和timestamp必须与wx.config中的nonceStr和timestamp相同。
+		b.签名用的url必须是调用JS接口页面的完整URL。在c#中获取当前请求路径HttpContext.Request.Url.ToString()
+		c.出于安全考虑，开发者必须在服务器端实现签名的逻辑。
+④、JS接口列表选择自己需要的接口以数组格式写入就好
+⑤、debug设置为ture时，JSSDK所有错误都会以弹窗形式展示错误，在开发完成后需记得将此处设置为false（因为配置成功无错误，也会弹窗展示成功信息）
+
+
+
+------------------------------------------------------------------
+1、场景：识别图中二维码进行关注公众号，该用户下次进入程序则不提示需要关注 
+微信开发文档接口地址：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1443433542
+       步骤
+	1：微信后台上传（永久（最多只能存储10万个）或零时二维码（零时二维码30天有效期））,设置二维码参数类型，参数是否为int还是string
+	2：在前端页面展示该二维码，当用户识别该二维码后会执行操作，将该用户执行的操作推送到开发者服务器，开发者服务器对该操作进行识别，是否为关注，如果为关注得到二维码带过来的参数
+	3：根据该参数获取用户存在开发者数据库中的信息，修改数据设置为关注，则该用户下次访问程序根据该值来判断是否需要关注，继续下步操作
+
+
+遇到的问题
+	   1、SDK配置信息
+	       问题：微信JS-SDK配置的url信息不认识c#的转义连接地址，如果是用的c#方式的转义url，则sdk配置错误
+	       解决方案：可以使用HtmlString()进行转换url（可以使用构造函数进行转换，支持一个带string类型参数的构造函数）

@@ -1,0 +1,42 @@
+<view class='body'>
+  <view class='container fistBox'>
+    <view class='examinationBox' bindtap='GaoKao'>
+      <image src='../Img/test1.png'></image>
+        <view class='examgroup'>
+          <image src='../Img/fontBg.png'></image>
+            <text>高考查询</text> 
+        </view>
+    </view>
+
+    <view class='examinationBox' bindtap='ZhongKao'>
+      <image src='../Img/test2.png'></image>
+        <view class='examgroup'>
+          <image src='../Img/fontBg.png'></image>
+            <text>中考查询</text> 
+        </view>
+    </view>
+  </view>
+
+  <view class='container lastBox'>
+    <view class='examinationBox' bindtap='ZiKao'>
+      <image src='../Img/test3.png'></image>
+        <view class='examgroup'>
+          <image src='../Img/fontBg.png'></image>
+            <text>自考查询</text> 
+        </view>
+    </view>
+
+    <view class='examinationBox' bindtap='ChengKao'>
+      <image src='../Img/test4.png'></image>
+        <view class='examgroup' >
+          <image src='../Img/fontBg.png'></image>
+            <text>成考查询</text> 
+        </view>
+    </view>
+  </view>
+
+</view>
+
+<view class='footer'>
+  <image src='../Img/footer.png'></image>
+</view>

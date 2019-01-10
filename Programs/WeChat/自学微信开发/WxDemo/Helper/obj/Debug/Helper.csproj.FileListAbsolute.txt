@@ -1,0 +1,5 @@
+D:\资料\自制微信开发\WxDemo\Helper\bin\Debug\Helper.dll
+D:\资料\自制微信开发\WxDemo\Helper\bin\Debug\Helper.pdb
+D:\资料\自制微信开发\WxDemo\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
+D:\资料\自制微信开发\WxDemo\Helper\obj\Debug\Helper.dll
+D:\资料\自制微信开发\WxDemo\Helper\obj\Debug\Helper.pdb

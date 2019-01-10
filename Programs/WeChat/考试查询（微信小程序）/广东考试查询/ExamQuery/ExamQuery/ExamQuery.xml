@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExamInfo>
+  <Province ProvinceValue="广东" ProvinceKey="440000">
+    <City CityValue="广州" CityKey="440100"></City>
+    <City CityValue="深圳" CityKey="440300"></City>
+  </Province>
+  <Province ProvinceValue="湖南" ProvinceKey="430000">
+    <City CityValue="衡阳" CityKey="430400"></City>
+  </Province>
+</ExamInfo>

@@ -1,0 +1,13 @@
+广州：http://www.gzzk.gov.cn/mobile/
+广州：http://www.gzzk.gov.cn/wx/
+
+
+---------------------------------------高考---------------------------------
+23号：11	22号：2
+
+四川：http://cx.sceea.cn/			http://cx.sceea.cn/html/GKCJ.htm	--成绩：6.22	录取：7.7
+http://wx.scedu.net/server/scedu_cj_ajax.ashx?action=GetJsResult&ksh=12345678901234&zkzh=123456789&sfzh=430422199901016976&_=1529659727524
+
+
+
+湖南：http://www.hneeb.cn/2018/gkcjcx.asp
